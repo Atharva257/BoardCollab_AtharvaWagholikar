@@ -1,0 +1,32 @@
+{
+  "name": "boardcollab-server",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "test": "jest --runInBand --coverage",
+    "load": "node scripts/load-test.js",
+    "seed:10k": "node scripts/seed-10k.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.0",
+    "zod": "^3.23.8",
+    "socket.io": "^4.8.1",
+    "@socket.io/redis-adapter": "^8.3.0",
+    "redis": "^4.7.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.4",
+    "supertest": "^7.0.0",
+    "socket.io-client": "^4.8.1"
+  }
+}
