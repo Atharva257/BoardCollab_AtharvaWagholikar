@@ -4,6 +4,8 @@ A real-time collaborative whiteboard application built using the MERN stack. Boa
 
 The application supports room-based collaboration, authentication, drawing tools, undo/redo, persistent storage, and Redis-based Socket.IO scaling.
 
+**GitHub Repository:** [BoardCollab_AtharvaWagholikar](https://github.com/Atharva257/BoardCollab_AtharvaWagholikar)
+
 ---
 
 ## 1. Project Overview
@@ -37,7 +39,7 @@ Users can create or join rooms, draw using different tools, view other participa
 | Real-time Communication | Socket.IO |
 | Authentication | JSON Web Token (JWT) |
 | Scaling | Redis, Socket.IO Redis Adapter |
-| Testing | Jest, React Testing Library |
+| Testing | Jest, React Testing Library, Vitest |
 | Infrastructure | Docker, Docker Compose |
 
 ---
@@ -86,7 +88,27 @@ Users can create or join rooms, draw using different tools, view other participa
 
 ---
 
-## 4. System Architecture
+## 4. Application Screenshots
+
+### Login Page
+
+![BoardCollab Login](screenshot/login.png)
+
+### Registration Page
+
+![BoardCollab Registration](screenshot/register.png)
+
+### Dashboard
+
+![BoardCollab Dashboard](screenshot/dashboard.png)
+
+### Collaborative Whiteboard Room
+
+![BoardCollab Whiteboard Room](screenshot/room.png)
+
+---
+
+## 5. System Architecture
 
 The application follows a client-server architecture.
 
@@ -135,7 +157,7 @@ flowchart TD
 
 ---
 
-## 5. Project Structure
+## 6. Project Structure
 
 ```text
 BoardCollab/
@@ -166,6 +188,12 @@ BoardCollab/
 │   ├── package.json
 │   └── ...
 │
+├── screenshot/
+│   ├── dashboard.png
+│   ├── login.png
+│   ├── register.png
+│   └── room.png
+│
 ├── docker-compose.yml
 ├── .gitignore
 └── README.md
@@ -173,7 +201,7 @@ BoardCollab/
 
 ---
 
-## 6. Prerequisites
+## 7. Prerequisites
 
 Install the following before running the project:
 
@@ -186,13 +214,13 @@ MongoDB and Redis can be started using Docker Compose.
 
 ---
 
-## 7. Installation and Setup
+## 8. Installation and Setup
 
 ### Step 1: Clone the Repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
-cd BoardCollab
+git clone https://github.com/Atharva257/BoardCollab_AtharvaWagholikar.git
+cd BoardCollab_AtharvaWagholikar
 ```
 
 ### Step 2: Start MongoDB and Redis
@@ -279,7 +307,7 @@ http://localhost:5173
 
 ---
 
-## 8. Docker Services
+## 9. Docker Services
 
 The root-level `docker-compose.yml` provides the supporting infrastructure.
 
@@ -305,7 +333,7 @@ docker compose down -v
 
 ---
 
-## 9. Real-Time Collaboration
+## 10. Real-Time Collaboration
 
 Socket.IO is used to exchange events between connected users.
 
@@ -325,7 +353,7 @@ The application has been manually tested with two backend instances and cross-in
 
 ---
 
-## 10. Data Persistence and Large Sessions
+## 11. Data Persistence and Large Sessions
 
 MongoDB stores whiteboard sessions and their elements.
 
@@ -346,7 +374,9 @@ This confirms the 10,000-element data seeding and storage test. It does not, by 
 
 ---
 
-## 11. Testing
+## 12. Testing
+
+Automated tests cover backend APIs, middleware, frontend components, application state, and utility functions.
 
 ### Backend Tests
 
@@ -360,12 +390,12 @@ Latest recorded results:
 
 | Metric | Result |
 |---|---:|
-| Test suites passed | 2 |
-| Tests passed | 10 |
-| Statement coverage | 44.15% |
-| Branch coverage | 41.29% |
-| Function coverage | 33.33% |
-| Line coverage | 47.76% |
+| Test suites passed | 5 |
+| Tests passed | 34 |
+| Statement coverage | 87.01% |
+| Branch coverage | 78.06% |
+| Function coverage | 86.66% |
+| Line coverage | 92.03% |
 
 ### Frontend Tests
 
@@ -379,12 +409,12 @@ Latest recorded results:
 
 | Metric | Result |
 |---|---:|
-| Test files passed | 4 |
-| Tests passed | 13 |
-| Statement coverage | 29.03% |
-| Branch coverage | 79.61% |
-| Function coverage | 31.88% |
-| Line coverage | 29.03% |
+| Test files passed | 16 |
+| Tests passed | 85 |
+| Statement coverage | 56.12% |
+| Branch coverage | 82.70% |
+| Function coverage | 56.52% |
+| Line coverage | 56.12% |
 
 Coverage figures represent the latest recorded test runs and may change as additional tests are added.
 
@@ -400,7 +430,7 @@ The production build completed successfully in the latest recorded run.
 
 ---
 
-## 12. Load Testing
+## 13. Load Testing
 
 The project includes scripts for preparing a 10,000-element session and testing Socket.IO communication.
 
@@ -434,9 +464,9 @@ The load-test script supports:
 
 ---
 
-## 13. Known Limitations and Future Improvements
+## 14. Known Limitations and Future Improvements
 
-- Increase backend and frontend automated test coverage.
+- Expand automated test coverage, particularly for the main canvas component.
 - Complete and document a 50+ concurrent-user load test.
 - Measure latency and throughput under different workloads.
 - Add further automated tests for reconnection and failure scenarios.
@@ -447,7 +477,7 @@ The load-test script supports:
 
 ---
 
-## 14. Security Considerations
+## 15. Security Considerations
 
 - JWT-based authentication.
 - Protected private-room access.
@@ -459,7 +489,7 @@ The load-test script supports:
 
 ---
 
-## 15. Running the Application
+## 16. Running the Application
 
 Start the infrastructure:
 
@@ -489,7 +519,7 @@ http://localhost:5173
 
 ---
 
-## 16. Conclusion
+## 17. Conclusion
 
 BoardCollab demonstrates a full-stack real-time collaborative application using the MERN ecosystem.
 
